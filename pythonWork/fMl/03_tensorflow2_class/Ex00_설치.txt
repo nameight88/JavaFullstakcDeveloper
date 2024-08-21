@@ -1,0 +1,66 @@
+### 텐서플로우 설치
+
+
+0. 아나콘나 콘솔에서 실행시
+
+    ` 아나콘나 콘솔은 관리자 권한으로 연다
+    ` 일반으로 열어서 된다 하더라도 어느 것이 문제가 되고 안되고 찾지말고 그냥 관리자 권한으로 하자
+    
+    >  pip install tensorflow
+    
+==================================================================
+
+0. conda와 pip  자체 update
+        * 텐서플로 1.9.0 버전부터는 콘다를 사용하여 텐서플로를 설치하는 것이 권장한다고 하지만 pip 사용 가능 ( 2021.07 )
+        * pip을 업그래드 안하면 설치가 안될 수 있다고 함
+        
+    > python -m pip install --upgrade pip
+
+        아래처럼 해도된다지만 되었다 안되었다
+        > conda update -n base conda    
+        > conda update --all
+        > conda upgrade pip  
+            또는 pip install --upgrade pip 
+     
+        
+1. 가상환경 만들기 (선택)
+    > conda create -n tf python=3.7 ( tf : 가상환경이름 )
+    
+    > conda info --envs
+    
+    > activate tf
+    
+
+2. 텐스플로우 설치
+
+    콘솔창에서는 일반적으로 conda install tensorflow 하지만
+
+    (1) cpu
+    
+        > pip install tensorflow ( 2.4.0이 설치됨 - 2020.12 )
+       
+       그러나 2020.07.22 conda로 설치하면 2.1.0이 설치되어서 pip 으로 설치함
+
+
+    (2) gpu
+    > conda install tensorflow-gpu
+
+3. 주피터노트북 새로 설치
+    > conda install jupyter notebook
+    - 윈도우 메뉴에 새로운 Jupyter Notebook 설치됨
+    
+    
+4. 그 외 설치
+    > conda install matplotlib seaborn
+
+-----------------------------------------------------
+[ 가상환경 삭제 ]
+
+1) 가상환경 확인하기
+# conda info --envs
+
+
+2) 가상환경 삭제하기
+# conda remove --name tf --all
+
+

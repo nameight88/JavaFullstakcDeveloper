@@ -1,0 +1,46 @@
+
+4월 03, 2024 12:36:14.69 NEW SESSION
+4월 03, 2024 12:36:14.69 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+4월 03, 2024 14:42:39.88 NEW SESSION
+4월 03, 2024 14:42:39.88 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+4월 19, 2024 10:52:37.71 NEW SESSION
+4월 19, 2024 10:52:37.72 [19504:17416:0419/105237.711:ERROR:device_event_log_impl.cc(195)] [10:52:37.711] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)
+4월 19, 2024 10:52:37.75 Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 19, 2024 10:52:58.41 [2680:21224:0419/105258.419:ERROR:device_event_log_impl.cc(195)] [10:52:58.420] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)
+4월 19, 2024 10:52:58.46 Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 19, 2024 10:53:07.53 [17324:8456:0419/105307.538:ERROR:device_event_log_impl.cc(195)] [10:53:07.538] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)
+4월 19, 2024 10:53:07.59 Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 19, 2024 10:53:58.90 [12192:20016:0419/105358.908:ERROR:device_event_log_impl.cc(195)] [10:53:58.908] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)
+4월 19, 2024 10:53:58.96 Created TensorFlow Lite XNNPACK delegate for CPU.
+
+4월 23, 2024 11:41:22.30 NEW SESSION
+4월 23, 2024 11:41:22.31 [20080:18828:0423/114122.301:ERROR:device_event_log_impl.cc(195)] [11:41:22.301] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)
+4월 23, 2024 11:41:22.33 Created TensorFlow Lite XNNPACK delegate for CPU.
+
+4월 24, 2024 12:16:07.65 NEW SESSION
+4월 24, 2024 12:16:07.66 [18948:10772:0424/121607.646:ERROR:device_event_log_impl.cc(195)] [12:16:07.647] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)
+4월 24, 2024 12:16:07.71 Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 24, 2024 12:17:23.12 [19552:23392:0424/121723.123:ERROR:device_event_log_impl.cc(195)] [12:17:23.123] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)
+4월 24, 2024 12:17:23.18 Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 24, 2024 14:12:59.41 [19552:14076:0424/141259.413:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 24, 2024 14:20:08.94 [19552:14076:0424/142008.947:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 24, 2024 14:20:11.77 [19552:23392:0424/142011.779:ERROR:device_event_log_impl.cc(195)] [14:20:11.779] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)
+4월 24, 2024 14:51:32.63 [19552:14076:0424/145132.630:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 24, 2024 15:01:04.00 [19552:14076:0424/150104.008:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 24, 2024 15:01:06.75 [19552:23392:0424/150106.758:ERROR:device_event_log_impl.cc(195)] [15:01:06.758] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)
+4월 24, 2024 15:37:31.59 [19552:14076:0424/153731.599:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 24, 2024 17:09:14.90 [19552:14076:0424/170914.907:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 24, 2024 17:09:17.02 [19552:14076:0424/170914.947:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 24, 2024 17:09:17.38 [19552:9568:0424/170914.956:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+4월 24, 2024 17:09:17.38 [19552:14076:0424/170916.433:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 24, 2024 17:09:17.82 [19552:23392:0424/170917.823:ERROR:device_event_log_impl.cc(195)] [17:09:17.822] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)
+4월 24, 2024 17:24:42.61 [19552:14076:0424/172442.615:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 24, 2024 18:25:24.72 [19552:14076:0424/182524.722:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 24, 2024 18:25:27.34 [19552:14076:0424/182524.727:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+4월 24, 2024 18:25:27.34 [19552:9568:0424/182524.946:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+4월 24, 2024 18:25:27.34 [19552:14076:0424/182526.255:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 24, 2024 18:25:27.83 [19552:23392:0424/182527.836:ERROR:device_event_log_impl.cc(195)] [18:25:27.835] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)
+4월 24, 2024 18:25:27.84 [19552:23392:0424/182527.845:ERROR:device_event_log_impl.cc(195)] [18:25:27.845] USB: usb_service_win.cc:308 SetupDiEnumDeviceInterfaces: �궗�슜 媛��뒫�븳 �뜲�씠�꽣媛� �뾾�뒿�땲�떎. (0x103)
+4월 24, 2024 18:25:27.90 [19552:23392:0424/182527.909:ERROR:device_event_log_impl.cc(195)] [18:25:27.907] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)

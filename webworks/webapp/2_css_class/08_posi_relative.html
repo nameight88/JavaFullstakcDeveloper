@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 상대배치 </title>
+
+<style type="text/css">
+
+	div {
+		width: 100px;
+		height: 150px;
+		border: 1px solid gray;
+		
+		background: olive;
+		color : white;
+		
+		display: inline-block;
+		
+		text-align: center;
+		align-content: center;
+	}
+	
+div:nth-of-type(odd):hover {
+	background: orange;
+	
+	position : relative;
+	left : 20px;
+	top  : 20px;
+	
+}
+
+/* div 요소 중 짝수번째 요소들에 마우스 올라가면
+	올라가는 것처럼 보이게 만들기 */
+	
+div:nth-of-type(even):hover {
+	background: orange;
+	
+	position : relative;
+	right : 20px;
+	bottom  : 20px;
+	
+}
+
+div.up:hover {
+ 	background: orange;
+	position : relative;
+	right : 20px;
+	bottom  : 20px;
+}
+div.down:hover {
+	background: orange;
+	position : relative;
+	left : 20px;
+	top  : 20px;
+}
+
+
+</style>
+
+</head>
+<body>
+	<h3> 나의 취미 </h3>
+	<hr>
+	<div class='up'>소풍</div>
+	<div class='down'>나들이</div>
+	<div class='down'>책보기</div>
+	<div class='up'>멍때리기</div>
+	<div class='down'>맛집탐방</div>
+</body>
+</html>

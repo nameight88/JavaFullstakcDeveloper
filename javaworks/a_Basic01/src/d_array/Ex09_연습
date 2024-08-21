@@ -1,0 +1,47 @@
+[1]
+
+
+	void subtract(int a, int b){
+	
+	}
+	
+
+[2]
+
+
+	void greeting(int a){
+		switch(a)
+		case(1):
+		case(2):
+		case(3):
+		case(4):
+		default :
+		
+		
+	}
+	
+[3]
+	int a = in.next.in()
+	int num = loopMethod()
+
+
+	void loopMethod(int num ){
+	}
+	
+	
+[4]
+	
+	
+
+	double circle(double a){
+		
+	}
+	
+	
+	
+[5]	
+
+
+	 int square (int a, int b){
+	 
+	 }

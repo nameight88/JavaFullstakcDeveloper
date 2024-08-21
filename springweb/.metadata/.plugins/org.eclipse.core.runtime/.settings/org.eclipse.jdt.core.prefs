@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.core.builder.resourceCopyExclusionFilter=
+org.eclipse.jdt.core.classpathVariable.JRE_LIB=D\:/download/jdk-11.0.22_windows-x64_bin/jdk-11.0.22/lib/jrt-fs.jar
+org.eclipse.jdt.core.classpathVariable.JRE_SRC=D\:/download/jdk-11.0.22_windows-x64_bin/jdk-11.0.22/lib/src.zip
+org.eclipse.jdt.core.classpathVariable.JRE_SRCROOT=
+org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled

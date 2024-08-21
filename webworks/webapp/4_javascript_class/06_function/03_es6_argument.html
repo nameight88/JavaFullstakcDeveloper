@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> es6 인수 </title>
+<script>
+ 
+	// @ 0. 함수는 인자의 갯수를 체크하지 않는다
+	
+ 
+ 
+	// @ 1. 인수의 기본값(default) 지정
+   	function multiple( first=1, second=2 )
+	{
+		return first * second;
+	}
+	document.writeln('곱은 ' +  multiple( 3, 4 ) + '<br/>'  );
+	document.writeln('곱은 ' +  multiple( 3, 4, 5 ) + '<br/>'  );
+	document.writeln('곱은 ' +  multiple( 3 ) + '<br/>' ); 
+	document.writeln('곱은 ' +  multiple( ) + '<br/>' ); 
+	
+	document.writeln('곱은 ' +  multiple(3, ) + '<br/>' ); 
+	
+	// @ 2. 가변길이 인수(...)
+	function sum(...nums){
+		let result = 0;
+		for(let num in nums){
+			result += num;
+		}
+		return result;
+	}
+	document.write( `${sum(1,2,3)} <br/>`); 
+	document.write( `${sum(1,2)} <br/>`); 
+	document.write( `${sum(1,2,3,4,5)} <br/>`); 
+	document.write( `${sum(1,2,3,4,5,6,7,8,9,10)} <br/>`); 
+		 
+ 
+</script>
+</head>
+<body>
+
+</body>
+</html>

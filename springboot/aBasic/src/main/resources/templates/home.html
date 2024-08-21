@@ -1,0 +1,16 @@
+<html xmlns="http://www.thymeleaf.org">
+	<head>
+		<title>나의 첫 스프링 부트</title>
+	</head>	
+	<body>
+		<h1>Thymeleaf 첫 페이지</h1>
+		<p>
+			예전방식<br/>
+			서버로부터 시간 : ${serverTiem}<br/>
+			서버로부터 메세지 : ${message}<br/>
+			<hr/>
+			<div th:text="${serverTime}"></div><br/>
+			<div th:text="${message}"></div>
+		</p>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Number 형과 형변환 </title>
+<script type="text/javascript">
+
+
+// 1. 숫자 형식 메소드 
+var su = 123.456789;
+document.writeln( su.toExponential(2)  + "<br/>" );	//지수형으로 표현
+document.writeln( su.toFixed(3)  + "<br/>" ); //소수점 3자리까지표현을 하지만 마지막 자릿수는 반올림처리
+document.writeln( su.toFixed(5) + "<br/>" ); //소수점 7자리까지인데 없는 값은 올림해서
+document.writeln( su.toPrecision(6)  + "<br/>" );  // 전체 자릿수를 제한 마지막 자릿수는 반올림처리
+document.writeln( su.toPrecision(10)  + "<br/>" );	// 전체 자릿수가 제한되면서 자동으로 반올림
+
+//-------------------------------------------------
+// 2. 형변환
+
+var n = '0770';
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

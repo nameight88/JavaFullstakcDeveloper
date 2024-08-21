@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="declaration">
+
+<!-- 신고 접수 기능 -->
+
+	<insert id="declarationInsert"
+		parameterType="com.javaclass.vo.DeclarationVO">
+		Insert Into Declaration (
+		user_id,
+		agent_id,declaration_contents,property_id
+		<if test="declaration_fname != null">
+			,declaration_fname, declaration_realfname,
+			declaration_fsize
+		</if>
+		)
+		values(
+		#{user_id},#{agent_id},#{declaration_contents},#{property_id}
+		<if test="declaration_fname != null">
+			,#{declaration_fname}, #{declaration_realfname},
+			#{declaration_fsize}
+		</if>
+		)
+	</insert>
+	<!-- 신고매물 삭제 기능 -->
+	<delete id="declarationPropertyDelete"
+		parameterType="com.javaclass.vo.DeclarationVO">
+		DELETE p
+		FROM property as p
+		INNER JOIN declaration as d
+		ON p.property_id = d.property_id
+		WHERE p.property_id = ${property_id}
+	</delete>
+	<!-- 허위신고 삭제기능 -->
+	<delete id="declarationDelete"
+		parameterType="com.javaclass.vo.DeclarationVO">
+		DELETE FROM Declaration
+		WHERE declaration_num =
+		#{declaration_num}
+	</delete>
+	<!-- 신고목록조회 기능 -->
+	<select id="getDeclarationList"
+		resultType="com.javaclass.vo.DeclarationVO">
+		SELECT *
+		FROM Declaration
+		ORDER BY declaration_num DESC
+		LIMIT #{offset}, #{size}
+	</select>
+	
+	<select id="getTotalDeclaration" resultType="int">
+		SELECT COUNT(*) FROM Declaration
+	</select>
+	
+	<!-- 채은 추가 사용자 신고내역 확인 -->
+	<select id="userDeclarationList" parameterType="hashmap" resultType="com.javaclass.vo.DeclarationVO">
+	SELECT * 
+	FROM Declaration
+	WHERE user_id = #{user_id}
+	LIMIT #{offset},#{size}
+	</select>
+	
+	<delete id="userDeclarationDelete" parameterType="com.javaclass.vo.DeclarationVO">
+	DELETE FROM Declaration
+	WHERE user_id = #{user_id} AND declaration_num = #{declaration_num}
+	</delete>
+	
+	<select id="userDeclarationListCount" parameterType="String" resultType="int">
+	SELECT count(*) FROM Declaration
+	WHERE user_id = #{user_id}
+	</select>
+	
+</mapper>

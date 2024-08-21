@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!-- xml구조는 1번째 라인에서 절대로 주석을 달면 안된다. -->
+<!-- 디비설정파일 연결 -->
+<properties resource='db.properties'/>
+
+<!-- 추가 설정
+아래와 같이 settings 부분을 코딩을 하면 자동을 표기법을 인식해서 바꿔준다. 
+alias 별칭 
+-->
+<settings>
+	<setting name="mapUnderscoreToCamelCase" value="true"/>
+</settings>
+
+<typeAliases>
+	<typeAlias type="mybatis.guest.model.Comment" alias="Comment"/>
+</typeAliases>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers> <!-- 태그가 mappers로 되어있으면 여러개의 mapper 연동이 가능 -->
+	<!-- 
+		<mapper resource="mybatis/guest/mapper/CommentMapper.xml" />
+		<mapper resource="emp_mybatis/EmpMapper.xml"/>
+		 -->
+		<mapper resource="board_mybatis/BoardMapper.xml"/>
+		<!-- 매퍼를 연결을 해주어야한다. -->
+	</mappers>
+</configuration>

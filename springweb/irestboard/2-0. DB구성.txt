@@ -1,0 +1,44 @@
+	테이블명 : reply
+	
+	댓글번호		rno			PK
+	게시글번호		bno			FK
+	댓글			reply
+	댓글작성자		replyer
+	댓글작성일		replydate
+
+
+ -- 마리아디비
+ CREATE TABLE REPLY 
+   (RNO int PRIMARY KEY auto_increment, 
+	BNO int NOT NULL ,
+	REPLY VARCHAR(1000) NOT NULL, 
+	REPLYER VARCHAR(50) NOT NULL, 
+	REPLYDATE DATE DEFAULT SYSDATE(),
+ 	FOREIGN KEY (BNO) REFERENCES BOARD(SEQ) 
+   );
+ 
+ -- 오라클
+ CREATE TABLE REPLY 
+   (RNO NUMBER, 
+	BNO NUMBER NOT NULL ,
+	REPLY VARCHAR2(1000) NOT NULL, 
+	REPLYER VARCHAR2(50) NOT NULL, 
+	REPLYDATE DATE DEFAULT sysdate,  
+    CONSTRAINT PK_REPLY PRIMARY KEY (RNO),
+ 	CONSTRAINT FK_REPLY_BOARD FOREIGN KEY (BNO) REFERENCES BOARD(SEQ) 
+   );
+create sequence reply_seq;
+   
+   
+ -------------------------------------------------
+ 기존에 Board 테이블이 먼저 생성되어야 함
+ -- 오라클
+CREATE TABLE board(
+    seq 	number PRIMARY KEY,
+    title	varchar2(50), 
+    writer  varchar2(30), 
+    content varchar2(200),
+    regdate date,
+    cnt		number
+);
+ 

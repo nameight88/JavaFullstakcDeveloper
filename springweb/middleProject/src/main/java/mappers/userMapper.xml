@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user">
+	<!-- 
+	<insert id="insertCustomer" parameterType="com.javassem.vo.CustomerVO">	
+	INSERT INTO tx_customer(num, ssn, NAME, address) 
+	VALUES(customer_tx_seq.nextval, #{ssn},#{name},#{address})
+	</insert>
+	 -->
+	 
+	<!-- mariadb -->
+	<insert id="insertUser" parameterType="com.javaclass.vo.UserVO">	
+	INSERT INTO user(user_id, user_password, user_name, user_email, user_phone ) 
+	VALUES(#{user_id},#{user_password},#{user_name},#{user_email},#{user_phone})
+	</insert>
+	
+	<select id="findIdUser"  parameterType="com.javaclass.vo.UserVO">
+	SELECT user_id FROM user WHERE user_email = #{user_email}
+	</select>
+	
+	<select id="idCheck"  parameterType="String" resultType="String">
+	SELECT user_id FROM user where user_id = #{checkBeforeId}
+	UNION
+	SELECT agent_id FROM agent where agent_id = #{checkBeforeId}
+	</select>
+	
+	<select id="checkEmail"  parameterType="String" resultType="String">
+	SELECT user_email FROM user where user_email = #{checkEmail}
+	UNION
+	SELECT agent_email FROM agent where agent_email = #{checkEmail}
+	</select>
+	
+	<select id="loginId"  parameterType="String" resultType="String">
+	SELECT user_id FROM user where user_id = #{inputId}
+	UNION
+	SELECT agent_id FROM agent where agent_id = #{inputId}
+	</select>
+	
+	<select id="loginPass"  parameterType="String" resultType="String">
+	SELECT user_password FROM user where user_password = #{inputPass}
+	UNION
+	SELECT agent_password FROM agent where agent_password = #{inputPass}
+	</select>
+	
+	<select id="loginType"  parameterType="String" resultType="String">
+	SELECT type FROM user where user_id = #{inputId}
+	UNION
+	SELECT type FROM agent where agent_id = #{inputId}
+	</select>
+	
+	<select id="findId"  parameterType="String" resultType="String">
+	SELECT user_id FROM user where user_email = #{inputEmail}
+	UNION
+	SELECT agent_id FROM agent where agent_email = #{inputEmail}
+	</select>
+	
+	<select id="checkPwEmail"  parameterType="String" resultType="String">
+	SELECT user_email FROM user where user_email = #{inputEmail}
+	UNION
+	SELECT agent_email FROM agent where agent_email = #{inputEmail}
+	</select>
+	
+	<select id="checkPwId"  parameterType="String" resultType="String">
+	SELECT user_id FROM user where user_id = #{inputPwId}
+	UNION
+	SELECT agent_id FROM agent where agent_id = #{inputPwId}
+	</select>
+	
+	<update id="changeNewUserPass" parameterType="java.util.Map">
+	UPDATE user SET user_password = #{inputNewPw} WHERE user_id = #{rememberId}
+	</update>
+	
+	<update id="changeNewAgentPass" parameterType="java.util.Map">
+	UPDATE agent SET agent_password = #{inputNewPw} WHERE agent_id = #{rememberId}
+	</update>
+	
+	
+	<!-- 채은 추가 userSelect -->
+	<select id="userSelect" parameterType="String" resultType="com.javaclass.vo.UserVO">
+	SELECT * FROM user
+	WHERE user_id = #{user_id}
+	</select>
+	<!--  채은 추가 userUpdate -->
+	<update id="userUpdate" parameterType="com.javaclass.vo.UserVO">
+	UPDATE user SET user_name = #{user_name}, user_phone=#{user_phone}
+	WHERE user_id = #{user_id}
+	</update>
+	<!-- 채은 추가 userInfoDelete -->
+	<delete id="userInfoDelete" parameterType="String">
+	Delete from user WHERE user_id = #{user_id}
+	</delete>
+	
+</mapper>

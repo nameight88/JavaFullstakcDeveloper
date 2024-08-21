@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>06_sampleForm.html</title>
+</head>
+<body>
+
+<form>
+<!-- 
+	<input type='text' name='name'>
+	<input type='submit' value='전송'>
+ -->
+ 
+ 	 <fieldset>
+ 		<legend>회원가입</legend>
+ 			<ol>
+ 				<li>
+ 					<li>
+ 					<input type='submit' value='회원가입'>
+ 					<input type='reset' value='취소'>
+ 				</li>
+ 			</ol>
+	 </fieldset>
+</form>
+
+</body>
+</html>

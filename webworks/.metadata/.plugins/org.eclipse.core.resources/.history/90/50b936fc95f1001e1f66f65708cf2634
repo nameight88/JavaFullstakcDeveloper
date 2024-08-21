@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>로그인 정보</legend>
+				<ol>
+					<li>
+						<label for='id'>아이디</label>
+						<input id='id' type='text' name='ID'>
+					</li>
+					<li>
+						<lebel for='password'>비밀번호</lebel>
+						<input type='password' name='password' id='password'>
+					</li>
+					<li>
+						<label for='password_a'>비밀번호 확인</label>
+						<input type='password' name='password_a' id='password_a'>
+					</li>
+					<li>
+						<label for='member_rank'>회원등급</label>
+						<select id='member_rank' name='member_rank'>
+							<option value='준회원' selected='selecetd'>준회원</option>
+							<option value='회원'>회원</option>
+							<option value='우수회원'>우수회원</option>
+						</select>
+					</li>
+				</ol>
+		</fieldset>
+		
+		<fieldset>
+			<legend>개인 정보</legend>
+				<ol>
+					<li>
+						<label for='member_name'>이름</label>
+						<input id='member_name' type='text' name='member_name'>
+					</li>
+					<li>
+						<label for='email'>메일주소</label>
+						<input id='email' type='domain' name='email'>
+					</li>
+					<li>
+						<label for='tel'>연락처</label>
+						<input id='tel' type='text' name='tel'>
+					</li>
+					<li>
+						<label for='birth'>생일</label>
+						
+						<input id='birth' type='date' name='birth' value='birth'>
+					</li>
+				</ol>
+		</fieldset>
+		
+		<fieldset>
+			<legend>코딩 숙련도</legend>
+				<ol>
+					<li>
+					<label for='birth'>생일</label>
+					<input id='birth' type='date' name='birth' value='birth'>
+					</li>
+				</ol>
+		</fieldset>
+		
+		<fieldset>
+			<legend></legend>
+				<ol>
+					<li>
+					<input type='submit' value='제출'>
+					</li>
+				</ol>
+		</fieldset>
+		
+	</form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+1713750807240	Move folder
+1713753147146	Rename type 'infoBean'
+1713753151761	Rename type 'InfoBean2'
+1713831210122	Move 'InsertMember.jsp' to '3_member'
+1713832801268	Move file
+1713833070264	Move folder
+1713852406839	Move folder
+1713852492439	Move folder
+1713928087758	Rename package 'reply_ex.serive'
+1713928331737	Rename type 'ReplyDAO'
+1713932098130	Rename type 'RepltInsertService'
+1714005866277	Copy files
+1714007763943	Rename resource 'db.property'
+1714007774714	Rename resource 'db.propertes'
+1714016254073	Rename resource 'deletecomment.jsp'
+1714017954510	Move 'modfiyComment.jsp' to '03_guest_mybatis_class'
+1714017983235	Rename resource 'modfiyComment.jsp'
+1714018012278	Copy file
+1714018021537	Rename resource 'modfiyCommentSave.jsp'
+1714026758933	Copy folder
+1714026768413	Delete element
+1714026816860	Copy folder
+1714026820172	Move file
+1714091736182	Rename resource '04_mybatis'
+1714091745999	Copy file
+1714091884939	Copy package
+1714091887846	Delete element
+1714091915827	Copy compilation unit
+1714091998745	Rename type 'Board_repo'
+1714093416871	Delete element
+1714095635368	Copy files

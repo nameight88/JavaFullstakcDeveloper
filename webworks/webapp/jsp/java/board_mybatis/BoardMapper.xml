@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+ 
+<mapper namespace="BoardMapper"> 
+<select id="selectBoard" resultType="board_mybatis.BoardVO">
+	SELECT *
+	FROM board_ex
+</select>
+
+<!-- ############ 조인인 경우 hashmap으로 받아온다. -->
+<!-- 
+<select id="selectEmpDept" resultType="hashmap">
+		select e.EMPNO empno
+			,e.ENAME ename
+			,e.JOB  job
+			,d.DNAME  dname
+			,d.loc loc
+		from emp e inner join dept d
+		on e.DEPTNO = d.DEPTNO
+</select>
+ -->	
+
+</mapper>

@@ -1,0 +1,27 @@
+
+
+1. servlet-context.xml 에 추가
+
+	<annotation-driven/>
+	
+	원래는 <mvc:annotation-driven/> 이지만 xmlns 확인하여 mvc가 기본이면 생략
+	
+2. 예외 핸들러 클래스 만들기 ( ProjectExceptionHandler.java )
+
+	@ControllerAdvice("com.javassem")
+	public class ProjectExceptionHandler {
+	
+		@ExceptionHandler(TxException.class)
+		public String handleTransException(Exception e, Model m) {
+			m.addAttribute("exception", e);
+			return "error/TransErrorPage";
+		}
+	}
+	
+3. 예외 클래스 만들기 ( TxException.class )
+	
+4. 예외 페이지 만들기 ( views / error / TransErrorPage.jsp )
+
+
+
+	

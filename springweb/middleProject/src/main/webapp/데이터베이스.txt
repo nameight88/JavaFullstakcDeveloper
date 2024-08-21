@@ -1,0 +1,220 @@
+-- 회원테이블
+CREATE TABLE user
+(
+	user_id 		varchar(10)		
+	,user_email			varchar(254)   UNIQUE KEY 
+	,user_name			varchar(10)	  
+	,user_phone			varchar(13)   
+	,user_password		varchar(10) 
+	,type				varchar(10) DEFAULT '고객'
+	,CONSTRAINT pk_user_id PRIMARY KEY (user_id)
+);
+INSERT INTO USER VALUES ("manage","manage@ict.com","관리자","010-0000-0000","1234","관리자");
+SELECT*FROM user;
+
+-- 중개인 테이블
+CREATE TABLE agent
+(
+	agent_id				varchar(10)		NOT NULL 				-- 중개인 아이디 pk
+	,agent_email			varchar(254	)	NOT NULL UNIQUE KEY		-- 중개인 이메일
+	,agent_name				varchar(10)		NOT NULL				-- 중개인 이름
+	,agent_phone			varchar(13)		NOT NULL				-- 중개인 전화번호
+	,agent_password			varchar(10) 	NOT NULL 
+	,agency					varchar(20)		NOT NULL		-- 중개소 OR 부동산 회사 이름
+	,license_num			varchar(15)		NOT NULL		-- 면허번호
+	,agent_fname			varchar(255)					-- 이미지
+	,agent_realfname		varchar(255)
+	,agent_fsize			int
+	,type					varchar(10) 	DEFAULT '중개인'
+	,CONSTRAINT pk_agent_id PRIMARY KEY (agent_id)
+);
+
+
+SELECT*FROM agent;
+
+
+-- 방 옵션 테이블
+CREATE TABLE property_option
+(
+    property_id         int  AUTO_INCREMENT, -- 방 옵션테이블 pk
+    aircon              BOOLEAN, -- 에어컨
+    refrigerator        BOOLEAN, -- 냉장고
+    washing_machine     BOOLEAN, -- 세탁기
+    shower_booth        BOOLEAN, -- 샤워부스
+    sink                BOOLEAN, -- 싱크대
+    induction           BOOLEAN, -- 인덕션
+    fire_alarm          BOOLEAN, -- 화재경보기
+    veranda             BOOLEAN, -- 베란다
+    tub                 BOOLEAN, -- 욕조
+    CONSTRAINT pk_option_num PRIMARY KEY (property_id)
+);
+
+-- 보안
+CREATE TABLE security
+(
+    property_id          int  AUTO_INCREMENT, -- 보안 pk
+    storage_box          BOOLEAN, -- 무인택배함
+    cctv                 BOOLEAN, -- cctv
+    door_lock            BOOLEAN, -- 도어락
+    intercom             BOOLEAN, -- 인터폰
+    entrance_security    BOOLEAN, -- 현관보안
+    bodyguard            BOOLEAN, -- 경호원
+    CONSTRAINT pk_security_num PRIMARY KEY (property_id)
+);
+
+-- 방 테이블
+
+
+-- 수정 봐야함 
+CREATE TABLE property
+(
+    property_id         int  AUTO_INCREMENT, -- 매물번호
+    property_title      varchar(20)  NOT NULL, -- 매물제목
+    property_type       varchar(10)  NOT NULL, -- 종류 (아파트,오피스텔, 주택)
+    property_cate       varchar(10)  NOT NULL, -- 거래 유형 (매매,전세,월세)
+    property_addr       varchar(100) NOT NULL, -- 주소
+    post_code           varchar(20)  NOT NULL, -- 우편번호
+    price               integer      NOT NULL, -- 가격
+    deposit             integer, -- 보증금
+    property_size       integer      NOT NULL, -- 크기
+    bedrooms            integer      NOT NULL, -- 침실수
+    bathrooms           integer      NOT NULL, -- 욕실 수
+    description         varchar(100) NOT NULL, -- 설명
+    property_year       date         NOT NULL, -- 연식
+    Reg_date            date         NOT NULL, -- 등록일
+    property_option     int, -- 옵션 ( 필요없음)
+    security            int, -- 보안	(필요없음)
+    property_count      int  default 0, -- 조회횟수
+    property_fname       varchar(100),
+    property_realfname  varchar(100),
+    property_fsize      int,
+    agent_id            varchar(10),
+    CONSTRAINT pk_property_id PRIMARY KEY (property_id),
+    CONSTRAINT fk_property_agent FOREIGN KEY (agent_id) REFERENCES agent (agent_id),
+    CONSTRAINT fk_property_option FOREIGN KEY (property_option) REFERENCES property_option (property_id),
+    CONSTRAINT fk_property_security FOREIGN KEY (security) REFERENCES security (property_id)
+);
+
+INSERT INTO property 
+(property_title, property_type,property_cate,property_addr,post_code,
+price,deposit,property_size,bedrooms,bathrooms,description,property_year,
+Reg_date)
+VALUES ("창밖뷰가 예쁜집", "아파트","월세","서울 마포구 백범로 10", "04100",500,8000
+,25,3,1,"바로앞 신촌역",now(),now());
+
+INSERT INTO property 
+(property_title, property_type,property_cate,property_addr,post_code,
+price,deposit,property_size,bedrooms,bathrooms,description,property_year,
+Reg_date)
+VALUES ("서강대 도보 3분거리", "원룸","월세","서울 마포구 백범로 18", "04103",80,1000
+,8,1,1,"도보 5분거리 서강대역, 신촌역",now(),now());
+
+INSERT INTO property 
+(property_title, property_type,property_cate,property_addr,post_code,
+price,deposit,property_size,bedrooms,bathrooms,description,property_year,
+Reg_date)
+VALUES ("건물11", "오피스텔","월세","서울 마포구 백범로 9", "04109",100,5000
+,11,1,1,"바로앞 신촌역",now(),now());
+
+
+INSERT INTO property 
+(property_title, property_type,property_cate,property_addr,post_code,
+price,deposit,property_size,bedrooms,bathrooms,description,property_year,
+Reg_date)
+VALUES ("르메이르타운2오피스텔", "오피스텔","월세","서울 마포구 백범로 13", "04101",100,5000
+,11,1,1,"바로앞 신촌역",now(),now());
+
+
+-- 예약
+CREATE TABLE reservation
+(
+	reservation_id 		int 	 	AUTO_INCREMENT 				-- 예약의 고유 식별자
+	,property_id		int		 	NOT NULL 					-- 예약된 부동산의 식별자(부동산 테이블)
+	,agent_id			varchar(10) NOT NULL					-- 중개인 id
+	,user_id  			varchar(10) NOT NULL					-- 고객 id
+	,reservation_date	date		NOT NULL					-- 예약 날짜
+	,reservation_time	time		NOT NULL					-- 예약 시간
+	,status				varchar(10)								-- 예약 상태
+	,CONSTRAINT pk_reservation_id PRIMARY KEY (reservation_id)
+	,CONSTRAINT fk_reservation_pid FOREIGN KEY (property_id) REFERENCES property (property_id)
+	,CONSTRAINT fk_reservation_agid FOREIGN KEY (agent_id) REFERENCES agent (agent_id)
+	,CONSTRAINT fk_reservation_ctid FOREIGN KEY (user_id ) REFERENCES user (user_id )
+);
+
+INSERT INTO reservation (property_id, agent_id,user_id,reservation_date,reservation_time, status)
+VALUES (1,"coco","manage","2024/01/20",now(),"에약");
+
+
+
+DROP TABLE reservation;
+-- 노쇼
+CREATE TABLE noshow (
+  reservation_id INT 		 NOT NULL
+  ,user_id		 varchar(10) NOT NULL
+  ,CONSTRAINT pk_noshow_id PRIMARY KEY (reservation_id)
+  ,CONSTRAINT fk_noshow_uid FOREIGN KEY (user_id) REFERENCES user (user_id)
+)
+
+DROP TABLE noshow;
+
+-- 관심매물
+CREATE TABLE  watchlist(
+  watchlist_num		 INT NOT NULL AUTO_INCREMENT
+  ,user_id 			 varchar(10) NOT NULL
+  ,property_id 		 INT NOT NULL
+  ,CONSTRAINT pk_watchlist_wid PRIMARY KEY (watchlist_num)
+  ,CONSTRAINT fk_watchlist_uid FOREIGN KEY (user_id) REFERENCES user (user_id)
+  ,CONSTRAINT fk_watchlist_pid FOREIGN KEY (property_id) REFERENCES property (property_id)
+);
+
+
+-- 리뷰
+CREATE TABLE review (
+  review_num	 	INT AUTO_INCREMENT
+  ,user_id			varchar(10) NOT NULL 
+  ,reservation_id 	INT NOT NULL
+  ,property_id	 	INT NOT NULL
+  ,review_contents	VARCHAR(50) NOT NULL
+  ,CONSTRAINT pk_review_rid PRIMARY KEY (review_num)
+  ,CONSTRAINT fk_reservation_rid FOREIGN KEY (reservation_id) REFERENCES reservation (reservation_id)
+);
+
+
+-- 뉴스
+CREATE TABLE news(
+	news_num	int 			AUTO_INCREMENT PRIMARY KEY
+	,news_title	varchar(100)	NOT NULL 
+	,news_link	varchar(255)	NOT NULL   
+);
+
+SELECT*FROM news;
+SELECT*FROM USER;
+SELECT*FROM agent;  
+
+DROP TABLE review ;
+
+DROP TABLE news ;
+
+
+DROP TABLE review  ;
+
+DROP TABLE user ;
+DROP TABLE agent  ;
+DROP TABLE reservation  ;
+DROP TABLE watchlist  ;
+DROP TABLE noshow ;
+DROP TABLE property ;
+DROP TABLE property_option ;
+DROP TABLE SECURITY;
+
+
+
+
+SELECT*FROM  property ;
+
+SELECT*FROM  agent ;
+SELECT *FROM property_option;
+SELECT *FROM SECURITY;
+SELECT * FROM reservation r ;
+
+

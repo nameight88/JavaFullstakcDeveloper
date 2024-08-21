@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="news">
+
+	<delete id="newsDelete" parameterType="int">
+		DELETE FROM news
+		WHERE
+		news_num = #{news_num}
+	</delete>
+
+	<select id="getNewsList" resultType="com.javaclass.vo.NewsVO">
+
+		SELECT * FROM news
+		ORDER BY
+		news_num DESC
+		LIMIT #{offset}, #{size}
+
+	</select>
+	<select id="getTotalNewsCount" resultType="int">
+		SELECT COUNT(*) FROM news
+	</select>
+</mapper>

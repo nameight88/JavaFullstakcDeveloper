@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>06_sampleForm.html</title>
+</head>
+<body>
+
+<form>
+<!-- 
+	<input type='text' name='name'>
+	<input type='submit' value='전송'>
+ -->
+ 
+ 	 <fieldset>
+ 		<legend>회원가입</legend>
+ 			<ol>
+ 				<li>
+ 					<label for='name'>이름</label>
+ 					<input id='name' type='text' name='name'>
+ 				</li>
+ 				<li>
+ 					<label for='gender'>성별</label>
+ 					<input type='radio' name='gender' id='gender' value='남자' checked='checked'>남자
+ 					<input type='radio' name='gender' id='gender' value='여자' >여자
+ 				</li>
+ 				<li>
+ 					<label for='job'>직업</label>
+ 					<select id='job' name='job'>
+ 						<option value='개발자'>개발자</option>
+ 						<option value='코더'>코더</option>
+ 						<option value='프로그래머' selected='selected'>프로그래머</option>
+ 					</select>
+ 				</li>
+ 				
+ 				
+ 				<!-- 웹(web) / 앱(app) -->
+ 				<!-- 웹과 앱의 경계가 허물어지고 있다. -->
+ 				<li>
+ 					<label for='countries'> 가고 싶은 나라</label>
+ 					<datalist id='countries'> 
+ 						<option value='가나'/>
+ 						<option value='스위스'/>
+ 						<option value='부탄'/>
+ 						
+ 					</datalist>
+ 				</li>
+ 				
+ 				<li>
+ 					<label for='취미'>취미</label>
+ 					<input type='checkbox' name='hobby' id='취미' value='잠자기' checked='checked'>잠자기
+ 					<input type='checkbox' name='hobby' id='취미' value='먹기'>먹기
+ 					<input type='checkbox' name='hobby' id='취미' value='숨쉬기'>숨쉬기
+ 					<input type='checkbox' name='hobby' id='취미' value='멍때리기'>멍때리기
+ 				</li>
+ 				<li>
+ 					<label for='애인'>애인</label>
+ 					<input type='radio' name='애인' id='애인' value='있다'>있다
+ 					<input type='radio' name='애인' id='애인' value='없다'>없다
+ 				</li>
+ 				<li>
+ 					<input type='submit' value='확인'>
+ 					<input type='reset' value='취소'>
+ 					
+ 				</li>
+ 			</ol>
+	 </fieldset>
+</form>
+
+</body>
+</html>

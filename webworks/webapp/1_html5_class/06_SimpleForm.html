@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 웹에서 메소드 : 전송방식 (get/post)
+	기본방식 - get
+	get: http(네트워크의 전송규칙)에 헤더부분에 url로 데이타를 전송
+	post : http에 바디부분으로 데이타를 전송
+		- 보안데이터 (비밀번호)
+		- 많은 용량의 데이타를 전송시
+		- 파일전송
+ -->
+	<form method="post">
+		<fieldset>
+			<legend>로그인 정보</legend>
+			<ol>
+				<li><label for='id'>아이디</label> <input id='id' type='text'>
+				</li>
+				<li><label for='password'>비밀번호</label> <input id='password'
+					type="password"></li>
+				<li><label for='psconfirm'>비밀번호 확인</label> <input
+					id='psconfirm' type="password"></li>
+				<li><label for='grade'>회원 등급</label> <input id='grade'
+					type='text' value='준회원' readonly="readonly"></li>
+			</ol>
+		</fieldset>
+
+		<fieldset>
+			<legend>개인 정보</legend>
+			<ol>
+				<li><label for='name'>이름</label> <input id='name' type='text'
+					placeholder="5자미만 공백없이" onfocus='this.placeholder=""'
+					onblur="this.placeholder='5자미만 공백없이'"></li>
+				<li><label for='email'>메일 주소</label> <input id='email'
+					type='email' placeholder="abcd@domain.com" onfocus='placeholder=""'
+					onblur="placeholder='abcd@domain.com'"></li>
+				<li><label for='tel'>연락처</label> <input id='tel' type="tel">
+				</li>
+				<li><label for='birthday'>생일</label> <input id='birthday'
+					type='date' value="연도-월-일"></li>
+			</ol>
+
+		</fieldset>
+		<fieldset>
+			<legend>코딩 숙련도(상,중,하)</legend>
+			<ol>
+				<li><input type="range" id='cordingskil'></li>
+			</ol>
+		</fieldset>
+		<fieldset>
+			<input type="submit" value='제출'>
+		</fieldset>
+	</form>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>자바스크립트 변수와 범위</title>
+	<script>
+	
+	/* //1. 글로벌변수와 지역변수
+	let scope = '글로벌변수';
+	function getValue(){
+		let scope = '지역변수';
+		return scope;
+	}
+	document.write(`1> ${getValue()} <br/>`); 	// 지역변수
+	document.write(`2> ${scope} <br/>`);	 	// 글로벌변수 */
+	
+	// 2. var/let 생략  -> 글로벌변수로 취급
+	scope = '글로벌변수';
+	function getValue(){
+		scope = '지역변수';	// 글로벌변수 scope
+		test = '테스트';		// 글로벌변수 test
+		return scope;
+	}
+	document.write(`1> ${getValue()} <br/>`);
+	document.write(`2> ${scope} <br/>`);
+	document.write(`3> ${test} <br/>`);
+	
+	/* // 3. 지역변수 선언시 앞에 기술 - 문제 방지
+	let scope = '글로벌변수';
+	function getValue(){
+		//document.write(`1> ${scope} <br/>`);	// let사용시 지역변수 호이스팅안됨
+		let scope = '지역변수';
+		document.write(`0> ${scope} <hr/>`);	// 지역변수
+		return scope;
+	}
+	document.write(`1> ${getValue()} <br/>`); 	// 지역변수
+	document.write(`2> ${scope} <br/>`);	 	// 글로벌변수 */
+	
+// 4. 
+	if( true){
+		let i = 100;			//지
+	}
+	document.write(`i= ${i} <br/>`);
+	
+	for(var j=0; j<3; j++) { }
+	for(var j=0; j<3; j++) { }
+	document.write(`j = ${j}`);
+	
+	</script>
+</head>
+
+<body>
+
+  
+ </body>
+</html>

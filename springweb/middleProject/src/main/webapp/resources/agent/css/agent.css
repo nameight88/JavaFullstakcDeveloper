@@ -1,0 +1,12 @@
+@charset "UTF-8";
+.checkbox-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.checkbox-row input[type="checkbox"] {
+    margin-right: 10px; /* 체크박스 사이의 간격 조정 */
+    margin-left: 10px;
+}
+
+
+

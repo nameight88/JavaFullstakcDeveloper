@@ -1,0 +1,52 @@
+a:link { 
+	text-decoration:none; 
+	color: black;
+}
+
+.divider-text {
+    position: relative;
+    text-align: center;
+    margin: 15px 30px;
+    /* margin-top: 15px;
+    margin-bottom: 15px; */
+    
+}
+.divider-text span {
+    padding: 7px;
+    font-size: 15px;
+    font-weight:bold;
+    position: relative;   
+    z-index: 2;
+   
+}
+.divider-text:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    top: 55%;
+    left: 0;
+    z-index: 1;
+}
+
+#logoContainer {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.link-findAccount{
+	position:auto;
+	left:10%;
+	text-align: right;
+	text-indent: 10px;
+}
+
+td {
+	padding-left: 10px;
+}
+
+#btn-login{
+	width:280px;
+	justify-content: center;
+	
+}

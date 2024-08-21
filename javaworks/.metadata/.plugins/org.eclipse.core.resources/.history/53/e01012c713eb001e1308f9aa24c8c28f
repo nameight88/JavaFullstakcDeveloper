@@ -1,0 +1,13 @@
+package e_info;
+
+public interface InfoModel {
+
+	/*
+	 *   함수명 : insertData
+	 *   인자값 :
+	 *   리턴값 :
+	 *   역  할 : 회원가입하는 입력값을 받아서 데이타베이스에 저장
+	 */
+	void insertData(infoVo vo) throws Exception;
+	Connection con = DriverManager.getConnection(url,user,pass);
+}

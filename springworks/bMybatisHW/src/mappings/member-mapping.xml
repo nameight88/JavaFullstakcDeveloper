@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberVO">
+<insert id="insertMemeber" parameterType="MemberVO">
+	INSERT INTO member_hw(userid,userpass,username)
+	VALUES(#{userid},#{userpass},#{username})
+</insert>
+<select id="deleteMember" parameterType="String" resultType="MemberVO">
+	DELETE FROM member_hw
+	WHERE userid=#{userid}
+</select>
+<select id="selectMember" resultType="MemberVO">
+		SELECT *
+		FROM member_hw
+		ORDER BY userid DESC
+</select>
+</mapper>

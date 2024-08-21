@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id='bean' class="ex3_xml_list.ListBean">
+		<property name="intList">
+			<list>
+				<value>11</value>
+				<value>22</value>
+				<value>33</value>
+				<value>44</value>
+			</list>
+		</property>
+
+		<!-- setMemberList() -->
+		<property name="memberList">
+			<list>
+				<ref bean='m1' />
+				<ref bean='m2'></ref>
+				<!-- 무명빈 -->
+				<bean class="ex3_xml_list.MemberBean">
+					<property name="name" value="길동이"></property>
+					<property name="age" value="13" />
+					<property name="message">
+						<value>맛점합시다.</value>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+
+	<bean id="m1" class="ex3_xml_list.MemberBean">
+		<property name="name" value="홍길동"></property>
+		<property name="age" value="33" />
+		<property name="message">
+			<value>오늘도 행복합시다.</value>
+		</property>
+	</bean>
+
+	<bean id="m2" class="ex3_xml_list.MemberBean">
+		<constructor-arg value="홍길국"></constructor-arg>
+		<constructor-arg value="22" />
+		<constructor-arg>
+			<value>짝꿍 프로젝트 화이팅!</value>
+		</constructor-arg>
+	</bean>
+</beans>

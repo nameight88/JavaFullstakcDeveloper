@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="agent">
+
+	<!-- mariadb -->
+	<insert id="insertAgent" parameterType="com.javaclass.vo.AgentVO"> 
+    INSERT INTO agent(agent_id, agent_password, agent_name, agent_email, agent_phone, license_num, agency
+        , agent_fname, agent_realfname, agent_fsize )
+    VALUES(#{agent_id},#{agent_password},#{agent_name},#{agent_email},#{agent_phone},#{license_num},#{agency}
+        ,#{agent_fname},#{agent_realfname},#{agent_fsize})
+	</insert>
+	
+	<select id="selectRealfname"  parameterType="com.javaclass.vo.AgentVO" resultType="String">
+	SELECT agent_realfname FROM agent WHERE agent_id = #{inputId}
+	</select>
+	
+	<!-- 채은 추가 agentSelect -->
+	<select id="agentSelect" parameterType="String" resultType="com.javaclass.vo.AgentVO">
+	SELECT * FROM agent
+	WHERE agent_id = #{agentId}
+	</select>
+	<!--  채은 추가 agentUpdate -->
+	<update id="agentUpdate" parameterType="com.javaclass.vo.AgentVO">
+	UPDATE agent SET agent_name = #{agent_name}, agent_phone=#{agent_phone},agency=#{agency}
+	WHERE agent_id = #{agent_id}
+	</update>
+	<!-- 채은 추가 agentInfoDelete -->
+	<delete id="agentInfoDelete" parameterType="String">
+	Delete from agent WHERE agent_id = #{agentId}
+	</delete>
+	
+</mapper>

@@ -1,0 +1,52 @@
+@charset "UTF-8";
+*{	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+
+	}
+
+ 
+
+nav.agentInfo div {
+	display: flex;
+	position: relativse;
+	width: 270px;
+	margin: 0 auto;
+}
+
+nav.agentInfo div a {
+	flex: 1;
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: orange;	
+}
+
+
+nav.agentInfo div a.on {color: white;}
+
+nav.agentInfo div > span { position: absolute;
+				 left: 0;
+				 bottom: 0;
+				 width: 100px;
+				 height: 3px;
+				 opacity: 0;	
+}
+
+.propId{
+	size: 10px;
+	
+	
+}
+.propInfo{
+	
+}
+.agentInfo{
+	text-align: center;
+}
+
+.agentInfo td {
+    padding: 10px; /* 원하는 만큼의 간격 설정 */
+}

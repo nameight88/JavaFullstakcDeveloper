@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="watchList">
+	<insert id="watchListInsert" parameterType="hashmap">
+		INSERT INTO watchlist(user_id, property_id) 
+		VALUES(#{user_id},#{property_id})
+	</insert>
+	
+ 	<delete id="watchListDelete" parameterType="com.javaclass.vo.WatchListVO">
+		DELETE FROM watchlist 
+		WHERE user_id = #{user_id} AND property_id = #{property_id};
+	</delete> 
+	
+	<select id="watchListSelect" parameterType="String" resultType="com.javaclass.vo.WatchListVO">
+		SELECT property_id FROM watchlist
+		WHERE user_id = #{user_id}
+	</select>
+	
+	<select id="watchListproperty" parameterType="hashmap" resultType="boolean">
+		SELECT COUNT(*) FROM watchlist
+    	WHERE user_id = #{user_id} AND property_id = #{property_id}
+	</select>
+</mapper>

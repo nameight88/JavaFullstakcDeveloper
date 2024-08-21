@@ -1,0 +1,7 @@
+2024-04-26 13:43:36,810 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-04-26 13:51:53,329 [Framework stop - Equinox Container: bc2f02c0-d4aa-47a7-b924-08189f20d816] WARN  org.eclipse.jgit.lib.Repository - close() called when useCnt is already zero for Repository[C:\Users\ict03_013\git\ICT-JavaScript-full-stack-Developer\.git]
+2024-04-29 19:28:38,989 [Worker-130: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-04-29 19:29:21,398 [Framework stop - Equinox Container: e2340ee4-3d7e-4804-830f-1652ed9a255c] WARN  org.eclipse.jgit.lib.Repository - close() called when useCnt is already zero for Repository[C:\Users\ict03_013\git\JAVA\.git]
+2024-05-01 07:47:58,914 [Worker-83: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2024-05-22 09:32:23,591 [Worker-8: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2024-08-20 19:26:55,497 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

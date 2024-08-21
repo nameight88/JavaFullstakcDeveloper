@@ -1,0 +1,52 @@
+package e_info;
+
+import java.sql.*;
+
+
+public class InfoModelImpl implements InfoModel {
+
+	// 0. 필요한 변수
+	String driver 	= "com.mysql.cj.jdbc.Driver";
+	String url		= "jdbc:mysql://localhost:3306/basic";
+	String user		= "scott";
+	String pass		= "tiger";
+	
+	Connection con = null;
+	
+	public InfoModelImpl() throws Exception{
+		// 1. 드라이버를 메모리 로딩
+		Class.forName(driver);
+	}
+	
+	
+	/*
+	 *   함수명 : insertData
+	 *   인자값 :
+	 *   리턴값 :
+	 *   역  할 : 회원가입하는 입력값을 받아서 데이타베이스에 저장
+	 */
+	public void insertData(infoVo vo) throws Exception {
+		try {
+		// 2. 연결객체 얻어오기
+		con = DriverManager.getConnection(url, user, pass);
+		
+		String sql = "";
+		
+		
+		PreparedStatement ps =  con.PreparedStatement(sql);
+		
+		ps.excuteUpdate();
+		
+		}finally {
+			con.close();
+		}
+	}
+
+
+	@Override
+	public void insertData() throws Exception {
+	
+		
+	}
+
+}

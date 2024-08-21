@@ -1,0 +1,37 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.dao.BoardFileDAO">
+
+	<!-- board_file에 입력 -->
+	<insert id="insertFile">
+		INSERT INTO board_file(
+			originFilename
+			,filename
+			,filepath
+		)
+		VALUES (
+			#{originFilename}
+			,#{filename}
+			,#{filepath}
+		)
+		<selectKey resultType="int"  keyProperty="fileid" keyColumn="fileid" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+	
+	<!-- board_file에서 키값 검색 -->
+	<select id="selectFile" parameterType="BoardFileVO" resultType="BoardFileVO">
+		SELECT *
+		FROM board_file
+		WHERE fileid=#{fileid}
+	</select>
+	
+	<!-- 최신 자동증가수 갑 얻기 -->
+	<select id="selectId" resultType="int" >
+		SELECT fileid
+		FROM board_file
+		ORDER BY fileid DESC
+		limit 1
+	</select>
+</mapper>

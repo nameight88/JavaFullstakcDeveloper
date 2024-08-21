@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Map / Set 내장 객체 </title>
+<script type="text/javascript">
+
+// 1. Map : 키와 값으로 관리하는 객체		키 중복 x
+let m = new Map();
+m.set('java','1111');
+m.set('script','2222');
+m.set('nodejs', '2222');
+m.set('java','3333');
+
+let inputId = 'java';
+let inputPw = '3333';
+for(let [key,v] of m){			//요소분해
+	// document.write(`${key} : ${v} <br/>` );
+	if( key === inputId & v === inputPw){
+		document.write('<h1>로그인성공</h1>');
+		break;
+	}
+}
+
+ 
+ 
+//-------------------------------------------------------
+// 2. Set  : 중복 값을 허용하지 않는 집합 관리 객체
+let s = new Set();
+s.add('tiger');
+s.add('dog');
+s.add('lion');
+s.add('dog');
+
+for(let value of s){
+	document.write( `${value} <br/>`);
+}
+
+/*for(let value in s){
+	document.write( `${value} 12 <br/>`);
+}	인덱스가 없어서 반복x	*/
+
+let lotto = new Set();
+while(lotto.size<6){
+	lotto.add(parseInt(Math.random()*45));
+}
+for(let value of lotto){
+	document.write(`${value} `);
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

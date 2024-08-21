@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ko-kr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HighZium studio</title>
+
+<!-- Bootstrap -->
+<link href="./css/nomalize.css" rel="stylesheet">
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/style.css" rel="stylesheet">
+<link href="./css/animate.css" rel="stylesheet">
+<link href="./css/jquery.fancybox.css" rel="stylesheet">
+
+<style type="text/css">
+	.artimg img {
+		width:310px;
+		height:400px;
+		padding : 10px;
+	}
+	#img1:hover{
+		content:url("./imgs/artist/1a.png");
+	}
+	#img2:hover{
+		content:url("./imgs/artist/2a.png");
+	}
+	#img3:hover{
+		content:url("./imgs/artist/3a.png");
+	}
+	#img4:hover{
+		content:url("./imgs/artist/4a.png");
+	}
+	#img5:hover{
+		content:url("./imgs/artist/5a.png");
+	}
+	#img6:hover{
+		content:url("./imgs/artist/6a.png");
+	}
+	#img7:hover{
+		content:url("./imgs/artist/7a.png");
+	}
+	#img8:hover{
+		content:url("./imgs/artist/8a.png");
+	}
+	#img9:hover{
+		content:url("./imgs/artist/9a.png");
+	}
+	#img10:hover{
+		content:url("./imgs/artist/10a.png");
+	}
+	#img11:hover{
+		content:url("./imgs/artist/11a.png");
+	}
+</style>
+
+
+</head>
+
+<body  data-spy="scroll" data-target="#navbar-scroll"
+	data-offset="50">
+	<div class="container-fluid">
+		<div class="container">
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation"
+				id="navbar-scroll">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target=".navbar-1-collapse">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#"><img src="./imgs/logo.jpg"
+							alt="HighZium studio" width=20%;> </a>
+					</div>
+
+					<!-- 네비게이션 메뉴 -->
+					<div
+						class="collapse navbar-collapse navbar-right navbar-1-collapse">
+						<ul class="nav navbar-nav">
+							<li><a href="index.html"> 홈 </a></li>
+							<li><a href="about.html"> 우리회사는 </a></li>
+							<li><a href="portfolio.html"> 우리작품들 </a></li>
+							<li><a href="contact.html"> 우리배우들 </a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+		</div>
+	</div>
+
+	<div id="contact"></div>
+	<div class="container contact">
+		<div class="row">
+			<div class="col-md-4">
+				<div class='artimg'>
+						<a id='img1' class="fancybox" rel="gallery1" href="./imgs/artist/1.png"><img
+							src="./imgs/artist/1.png" alt="..."></a>
+						<a id='img4' class="fancybox" rel="gallery1" href="./imgs/artist/4.png"><img
+							src="./imgs/artist/4.png" alt="..."></a>
+						<a id='img7' class="fancybox" rel="gallery1" href="./imgs/artist/7.png"><img
+							src="./imgs/artist/7.png" alt="..."></a>
+						<a id='img10' class="fancybox" rel="gallery1" href="./imgs/artist/10.png"><img
+							src="./imgs/artist/10.png" alt="..."></a>	
+					</div>
+			</div>
+			<div class="col-md-4">
+				<div class='artimg'>
+						<a id='img2' class="fancybox" rel="gallery1" href="./imgs/artist/2.png"><img
+							src="./imgs/artist/2.png" alt="..."></a>
+						<a id='img5' class="fancybox" rel="gallery1" href="./imgs/artist/5.png"><img
+							src="./imgs/artist/5.png" alt="..."></a>
+						<a id='img8' class="fancybox" rel="gallery1" href="./imgs/artist/8.png"><img
+							src="./imgs/artist/8.png" alt="..."></a>
+						<a id='img11' class="fancybox" rel="gallery1" href="./imgs/artist/11.png"><img
+							src="./imgs/artist/11.png" alt="..."></a>	
+					</div>
+			</div>
+			<div class="col-md-4">
+				<div class='artimg'>
+						<a id='img3' class="fancybox" rel="gallery1" href="./imgs/artist/3.png"><img
+							src="./imgs/artist/3.png" alt="..."></a>
+						<a id='img6' class="fancybox" rel="gallery1" href="./imgs/artist/6.png"><img
+							src="./imgs/artist/6.png" alt="..."></a>
+						<a id='img9' class="fancybox" rel="gallery1" href="./imgs/artist/9.png"><img
+							src="./imgs/artist/9.png" alt="..."></a>
+					</div>
+			</div>
+		</div>
+	</div>
+	<!--  fluid container 끝 -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/bootstrap-hover-dropdown.js"></script>
+	<script src="./js/animatescroll.min.js"></script>
+	<script src="./js/simpleparallax.js"></script>
+	<script src="./js/waypoints.min.js"></script>
+	<script src="./js/jquery.fancybox.js"></script>
+	<script>
+		$('.carousel').carousel()
+		$('.carousel2').carousel({
+			interval : 3000
+		})
+
+		/***************** Waypoints ******************/
+		$('.wp1').waypoint(function() {
+			$('.wp1').addClass('animated fadeInLeft');
+		}, {
+			offset : '75%'
+		});
+		$('.wp2').waypoint(function() {
+			$('.wp2').addClass('animated fadeInUp');
+		}, {
+			offset : '75%'
+		});
+		$('.wp3').waypoint(function() {
+			$('.wp3').addClass('animated fadeInDown');
+		}, {
+			offset : '55%'
+		});
+		$('.wp4').waypoint(function() {
+			$('.wp4').addClass('animated fadeInDown');
+		}, {
+			offset : '75%'
+		});
+		$('.wp5').waypoint(function() {
+			$('.wp5').addClass('animated fadeInRight');
+		}, {
+			offset : '75%'
+		});
+		//*  */
+		$(document).ready(function() {
+			$(".fancybox").fancybox({
+				openEffect : 'none',
+				closeEffect : 'none'
+			});
+		});
+	</script>
+</body>
+</html>

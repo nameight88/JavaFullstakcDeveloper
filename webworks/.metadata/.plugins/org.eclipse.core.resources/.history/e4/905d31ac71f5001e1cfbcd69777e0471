@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트의 연산자</title>
+<script type="text/javascript">
+
+//1.  실수형 계산에는 주의 -> 2진수로 변환하여 저장하고 연산하기 때문에 발생
+
+document.write(0.2*3 == 0.6);
+//브라우저가 값을 계산을 할때의 10진수로 계산을 하는 것이 아니라 2진수로 계산을 하기 
+//때문에 false가 나온다.
+
+document.write( 0.2*3);
+//실수형을 계산을 할때의 사람들이 생각하는 10진수가 아니기 때문에
+//원하는 값을 얻고 싶으면 정수 값으로 바꿔서 계산을 해야한다.
+document.write(0.2*10*3 == 0.6*10); //true
+document.write(0.2*0.3*10 == 0.6*10); // false
+
+document.write('<hr/>');	
+
+//2.==와 === 차이는?
+
+let num = 10; //숫자 10
+let str = '10'; // 문자열 10 둘은 다른 값이다.
+		
+if ( num == str) document.write("같다");
+else document.write("다르다.");
+
+//자바는 둘의 자료형이 다르기 때문에 false가 나오지만
+//자바 스크립트는 같다고 해주기 때문에
+
+// === 리터널과 자료형까지 모두 비교를 한다.
+if ( num === str) document.write("같다");
+else document.write("다르다.");
+
+
+// 3. 기본형과 참조형
+
+ let a = 10;
+ let b = 10;
+
+if(a == b) document.write("같다");
+else document.wrtie("다르다");
+
+let c = ['java','script'];
+let d = ['java','script'];
+// 둘의 지정된 주소 값이 다르기 때문에 다르다고 나온다.
+
+if(c == d) document.write("같다1");
+else document.write("다르다1");
+
+let e = 'Hello';
+let f = 'Hello';
+if(e == f) document.write("같다2");
+else document.wrtie("다르다2");
+
+document.write("<hr/><hr/>");
+// 4. boolean형
+let x = false;
+if(x) document.write(true +'<br/>');
+else document.write(false +'<br/>');
+
+//var t = 0; false
+//var t = 1; true
+//var t = -1 true
+
+var t = 0;
+if(t) document.write(true +'<br/>');
+else document.write(false +'<br/>');
+//0을 제외한 모든 수가 true가 나온다
+//다른 숫자도 불린형으로 사용이 가능핟,
+
+var y = null;
+if(y) document.write(true +'<br/>');
+else document.write(false +'<br/>');
+
+
+var h = NaN; // not a number
+if(h) document.write(true +'<br/>');
+else document.write(false +'<br/>');
+
+
+// 5. 논리형과 논리연산자 결합
+const num1 = null;
+const result1 = num1 || '숫자를 입력하세요';
+document.write(result1 +"<br/>");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

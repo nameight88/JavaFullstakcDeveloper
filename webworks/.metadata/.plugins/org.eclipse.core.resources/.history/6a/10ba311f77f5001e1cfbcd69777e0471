@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+document.write('<table border="2">');
+var x = 0;
+for(var i = 0;i<= 5 ; i+=1){
+	documnet.write('<tr>')
+	for(var j = 0; j<=5 ;j+=1){
+		document.write("<td>"+(x++)+"</td>")
+	}
+	document.write("<tr>");
+}
+document.write("</table>")
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

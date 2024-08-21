@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	document.write('<table border="2">');
+	var x = 1;
+	for (var i = 0; i < 5; i += 1) {
+		document.write('<tr>')
+		for (var j = 0; j < 5; j += 1) {
+			document.write("<td>" + (x++) + "</td>")
+		}
+		document.write("</tr>");
+	}
+	document.write("</table>");
+	
+	//오타 조심 초기값 0이 아닌 1로 설정
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Number 형과 형변환 </title>
+<script type="text/javascript">
+
+
+// 1. 숫자 형식 메소드 
+var su = 123.456789;
+document.writeln( su.toExponential(2)  + "<br/>" );
+// 지수형식
+document.writeln( su.toFixed(3)  + "<br/>" );	
+// 소숫점3자리
+document.writeln( su.toFixed(7) + "<br/>" );	
+// 소숫점7자리 - 없으면 0추가
+document.writeln( su.toPrecision(6)  + "<br/>" );	
+// 전체자리수 6자리
+document.writeln( su.toPrecision(10)  + "<br/>" );	
+// 전체자리수 10자리 - 없으면 0추가
+
+//-------------------------------------------------
+// 2. 형변환
+var n = '07a7a';
+document.writeln( n + "<br/>");				//07a7a
+document.writeln( Number(n) +"<br/>");		//NaN
+document.writeln( parseInt(n)+"<br/>");		//7
+
+document.writeln( typeof n + "<br/>");			//string
+document.writeln( typeof Number(n) +"<br/>");	//number
+document.writeln( typeof parseInt(n)+"<br/>");  //number
+
+//	[참고] 자동형변환
+var v = 123 + '4';	// 숫자+문자 => 문자
+document.writeln( typeof v + '<br/>');	//string
+
+var v = 123 - '4';	// 숫자-문자 => 숫자
+document.writeln( typeof v + '<br/>');	//number
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+package e_info;
+
+//데이터를 주고 받음
+// VO ( Value object)
+// DTO( Data Transfer Object)
+public class infoVo {
+String name
+String id
+String tel
+String home
+String gender
+int age
+
+}

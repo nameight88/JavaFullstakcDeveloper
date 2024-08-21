@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="PropertyDao">
+	<!-- <insert id="insertCustomer" parameterType="com.javassem.vo.CustomerVO"> 
+		INSERT INTO tx_customer(num, ssn, NAME, address) VALUES(customer_tx_seq.nextval, 
+		#{ssn},#{name},#{address}) </insert> -->
+
+	<!-- <select id="getPropertyList", resultType="com.javaclass.vo.PropertyVO"> 
+		SELECT*FROM property </select> -->
+<!-- 해당 중개인이 입력한 매물 list	 -->
+	<select id="getPropertyList"
+		resultType="com.javaclass.vo.PropertyVO">
+		SELECT * FROM property
+		WHERE agent_id = #{agent_id}
+	</select>
+
+<!-- 매물 리스트 -->
+	<select id="getPropertyMapList"
+		resultType="com.javaclass.vo.PropertyVO">
+		SELECT * FROM property
+	</select>
+	<!--  신규 매물 -->
+	<select id="getNewProperty"
+		resultType="com.javaclass.vo.PropertyVO">
+		SELECT * FROM property
+		ORDER BY property_id desc LIMIT 4
+	</select>
+
+<!--  매물검색기능 -->
+ 	<select id="searchMap" parameterType="hashmap" resultType="com.javaclass.vo.PropertyVO">
+		SELECT*FROM property
+		<if test="property_cate == '전체' and property_type == '전체' and property_addr == ''">
+			WHERE 1 = 1
+			LIMIT #{offset}, #{pageSize}
+		</if>
+		<if test="property_cate != '전체' and property_type == '전체' and property_addr == ''">
+			WHERE property_cate = #{property_cate}
+			LIMIT #{offset}, #{pageSize}
+		</if>
+		<if test="property_cate == '전체' and property_type != '전체' and property_addr == ''">
+			WHERE property_type = #{property_type}
+			LIMIT #{offset}, #{pageSize}
+		</if>
+		<if test="property_cate == '전체' and property_type == '전체' and property_addr != ''">
+			WHERE property_addr like '%${searchText}%'
+			LIMIT #{offset}, #{pageSize}
+		</if>
+		<if test="property_cate != '전체' and property_type != '전체' and property_addr == ''">
+			WHERE property_cate = #{property_cate} AND property_type =
+			#{property_type}
+			LIMIT #{offset}, #{pageSize}
+		</if>
+		<if test="property_cate == '전체' and property_type != '전체' and property_addr != ''">
+			WHERE property_type = #{property_type} AND property_addr like
+			'%${searchText}%'
+			LIMIT #{offset}, #{pageSize}
+		</if>
+		<if test="property_cate != '전체' and property_type == '전체' and property_addr != ''">
+			WHERE property_cate = #{property_cate} AND property_addr like
+			'%${searchText}%'
+			LIMIT #{offset}, #{pageSize}
+		</if>
+		<if test="property_cate != '전체' and property_type != '전체' and property_addr != ''">
+			WHERE property_cate = #{property_cate} AND property_type =
+			#{property_type} AND property_addr like '%${searchText}%'
+			LIMIT #{offset}, #{pageSize}
+		</if>
+
+	</select>
+	<select id="getPropertiesCount" parameterType="hashmap" resultType="int">
+		SELECT count(*) FROM property
+		<if test="property_cate == '전체' and property_type == '전체' and property_addr == ''">
+			WHERE 1 = 1
+		</if>
+		<if test="property_cate != '전체' and property_type == '전체' and property_addr == ''">
+			WHERE property_cate = #{property_cate}
+		</if>
+		<if test="property_cate == '전체' and property_type != '전체' and property_addr == ''">
+			WHERE property_type = #{property_type}
+		</if>
+		<if test="property_cate == '전체' and property_type == '전체' and property_addr != ''">
+			WHERE property_addr like '%${searchText}%'
+		</if>
+		<if test="property_cate != '전체' and property_type != '전체' and property_addr == ''">
+			WHERE property_cate = #{property_cate} AND property_type =
+			#{property_type}
+		</if>
+		<if test="property_cate == '전체' and property_type != '전체' and property_addr != ''">
+			WHERE property_type = #{property_type} AND property_addr like
+			'%${searchText}%'
+		</if>
+		<if test="property_cate != '전체' and property_type == '전체' and property_addr != ''">
+			WHERE property_cate = #{property_cate} AND property_addr like
+			'%${searchText}%'
+		</if>
+		<if test="property_cate != '전체' and property_type != '전체' and property_addr != ''">
+			WHERE property_cate = #{property_cate} AND property_type =
+			#{property_type} AND property_addr like '%${searchText}%'
+		</if>
+	</select>
+
+	<!-- 검색 (매물,옵션,보안) -->
+	<select id="getProperty"
+		resultType="com.javaclass.vo.PropertyVO">
+		SELECT*FROM property
+		WHERE property_id = #{propertyId}
+
+	</select>
+
+	<select id="getPropertyOption"
+		resultType="com.javaclass.vo.PropertyOptionVO">
+		SELECT*FROM property_option
+		WHERE property_id =
+		#{propertyId}
+
+	</select>
+
+
+	<select id="getPropertySecurity"
+		resultType="com.javaclass.vo.PropertySecurityVO">
+		SELECT*FROM security
+		WHERE property_id = #{propertyId}
+
+	</select>
+
+
+
+	<!-- 삭제 (매물,옵션,보안) -->
+	<delete id="deleteProperty"
+		parameterType="com.javaclass.vo.PropertyVO">
+		DELETE FROM property WHERE property_id = #{propertyId}
+	</delete>
+
+	<delete id="deleteOption"
+		parameterType="com.javaclass.vo.PropertyOptionVO">
+		DELETE FROM property_option WHERE property_id =
+		#{propertyId}
+	</delete>
+
+	<delete id="deleteSecurity"
+		parameterType="com.javaclass.vo.PropertySecurityVO">
+		DELETE FROM security WHERE property_id = #{propertyId}
+	</delete>
+
+	<update id="updateProperty"
+		parameterType="com.javaclass.vo.PropertyVO">
+		UPDATE property SET
+		property_title=#{property_title}, property_cate=#{property_cate},
+		price=#{price}, deposit=#{deposit},
+		description=#{description}
+		<if test="property_fname != null">
+		,property_fname=#{property_fname}, property_realfname=#{property_realfname}, 
+		property_fsize=#{property_fsize}
+		</if>
+		WHERE property_id = #{property_id}
+
+	</update>
+
+	<update id="updateOption"
+		parameterType="com.javaclass.vo.PropertyOptionVO">
+		UPDATE property_option SET
+		aircon = #{aircon}, refrigerator=#{refrigerator},
+		washing_machine=#{washing_machine},
+		shower_booth=#{shower_booth},
+		sink=#{sink}, induction=#{induction}, fire_alarm=#{fire_alarm},
+		veranda=#{veranda}, tub=#{tub}
+		WHERE property_id = #{property_id}
+	</update>
+
+	<update id="updateSecurity"
+		parameterType="com.javaclass.vo.PropertySecurityVO">
+		UPDATE security SET
+		storage_box=#{storage_box},
+		cctv=#{cctv}, door_lock=#{door_lock},
+		intercom= #{intercom},
+		entrance_security=#{entrance_security}, bodyguard=#{bodyguard}
+		WHERE
+		property_id = #{property_id}
+
+	</update>
+
+
+	<!-- 입력 (매물,옵션,보안) -->
+	<insert id="insertProperty"
+		parameterType="com.javaclass.vo.PropertyVO">
+		INSERT INTO property (
+		property_title, property_type, property_cate,
+		property_addr, post_code,
+		price, deposit, property_size, bedrooms,
+		bathrooms, description,agent_id,
+		property_year, reg_date,
+		property_count,addr_detail
+		<if test="property_fname != null">
+		,property_fname, property_realfname, property_fsize
+		</if>
+		)
+		VALUES (
+		#{property_title},
+		#{property_type},
+		#{property_cate}, #{property_addr}, #{post_code},
+		#{price}, #{deposit},
+		#{property_size}, #{bedrooms}, #{bathrooms},
+		#{description},#{agent_id},
+		#{property_year}, now(), #{property_count},#{addr_detail}
+		<if test="property_fname != null">
+		,#{property_fname}, #{property_realfname}, #{property_fsize}
+		</if>
+		)
+	</insert>
+
+	<insert id="insertOption"
+		parameterType="com.javaclass.vo.PropertyOptionVO">
+		INSERT INTO property_option (aircon, refrigerator, washing_machine,
+		shower_booth, sink, induction, fire_alarm, veranda, tub)
+		VALUES
+		(#{aircon}, #{refrigerator}, #{washing_machine}, #{shower_booth},
+		#{sink}, #{induction}, #{fire_alarm}, #{veranda}, #{tub})
+	</insert>
+
+	<insert id="insertSecurity"
+		parameterType="com.javaclass.vo.PropertySecurityVO">
+		INSERT INTO security (storage_box, cctv, door_lock, intercom,
+		entrance_security, bodyguard)
+		VALUES (#{storage_box}, #{cctv},
+		#{door_lock}, #{intercom},
+		#{entrance_security}, #{bodyguard})
+		
+	</insert>
+
+
+	<select id="getPropertyPagingList" parameterType="hashmap" resultType="com.javaclass.vo.PropertyVO">
+		SELECT * FROM property
+		WHERE agent_id = #{agent_id}
+		LIMIT #{offset}, #{size}
+		
+	</select>
+	
+	<select id="getTotalAgentProperty" parameterType="String" resultType="int">
+		SELECT count(*) FROM property
+		WHERE agent_id = #{agent_id}
+	</select>
+
+
+
+
+
+
+</mapper>

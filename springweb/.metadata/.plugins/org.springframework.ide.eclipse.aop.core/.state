@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="fSpringMVC"/>
+<aop-project name="middleProject"/>
+<aop-project name="gWebBoard"/>
+<aop-project name="irestboard"/>
+<aop-project name="hFileBoard"/>
+<aop-project name="jtransaction"/>
+</aop-reference-model>

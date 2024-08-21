@@ -1,0 +1,22 @@
+
+-- 마리아디비
+CREATE TABLE board(
+	seq 	number PRIMARY KEY AUTO_INCREMENT,
+	title	varchar2(50), 
+	writer  varchar2(30), 
+	content varchar2(200),
+	regdate date,
+	cnt		number
+);
+
+-- 오라클
+CREATE TABLE board(
+	seq 	number   PRIMARY KEY,
+	title	varchar2(50), 
+	writer  varchar2(30), 
+	content varchar2(200),
+	regdate date,
+	cnt		number
+);
+
+CREATE SEQUENCE board_seq;

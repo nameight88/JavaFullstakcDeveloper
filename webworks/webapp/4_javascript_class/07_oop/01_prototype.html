@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title> Javascript 객체지향 </title>
+</head>
+
+<body>
+	<script>
+		/* [참고]
+			1. 함수
+				(1) 선언 소문자로 생성
+				  function func(){}
+				(2)호출
+				func();
+			2.클래스 첫글자는 대문자로 만들어줘야한다.
+				(1)선언
+				function Student(){}
+				(2)객체 생성
+				var s = new Student();
+	
+				[참고] JAVA인 경우
+				(1) 클래스 선언
+				class Student{
+	
+				}
+				(2) 객체 생성
+				Student s = new Student();
+		*/
+
+		//0. 	클래스 선언 -  생성자로 초기화하기
+		/*
+		function Student(id, name, dept){
+			this.id = id;
+			this.name = name;
+			this.dept = dept;
+			
+			this.display =function(){
+				var str  = "학번: "+id;
+				str += "/이름:" + name;
+				str += "/학과:" + dept + "<br/>"; 
+				return   str;
+			}
+		}
+		
+		var kim = new Student("001","김길동", "컴공");
+		var lee = new Student("002","이길동", "경영");
+		
+		document.write( kim.display() );
+		document.write( lee.display() );
+		*/
+
+		function Student(name, kor, eng, math) {
+			this.name = name;
+			this.kor = kor;
+			this.eng = eng;
+			this.math = math;
+
+		}
+		//[3]
+		Student.prototype = {
+			showInfo: function () {
+				document.write(this.name + "님 "
+					+ this.kor + "/"
+					+ this.eng + "/"
+					+ this.math + "/")
+			},
+			sum: function () {
+				return this.kor + this.eng + this.math;
+			}
+		} //동적으로 함수들을 다 추가
+
+		/*[2]
+		Student.prototype.showInfo = function () {
+			document.write(this.name + "님 "
+				+ this.kor + "/"
+				+ this.eng + "/"
+				+ this.math + "/")
+		}
+		Student.prototype.sum = function () {
+				return this.kor + this.eng + this.math;
+			}
+			showInfo 가 hong이라는 변수 안에 들어가서 s1에서는 호출을 할 수 없기 때문에
+			동적으로 Studnet에 prototype을 이용을 해서 함수를 추가
+			*/
+
+		//프로토 타입으로 추가를 하면  s1에도 showInfo를 호출를 할 수 있다.
+		//단, 객체를 생성하기 전에 먼저 프로토타입을 이용을 해서 먼저 추가 해줘야한다.
+
+		let hong = new Student("홍길동", 80, 80, 80);
+		let s1 = new Student("홍길순", 75, 75, 75);
+
+		document.write(hong.name + "님의 성적은 " + hong.sum() + "점입니다.<br/>");
+		document.write(hong.name + "님의 성적은 " + hong['sum']() + "점입니다.");
+
+		/*[1]
+		hong.showInfo = function(){
+			document.write(this.name +"님 " 
+			+this.kor+"/"
+			+this.eng+"/"
+			+this.math+"/")
+		}
+		hong 이라는 변수 안에 shoInfo라는 함수를 선언을 해줬다.
+		*/
+
+		hong.showInfo();
+		s1.showInfo(); //이렇게 하게되면 오류가 발생한다.
+
+		/*
+		showInfo라는 함수는 hong에 종속되어있기 때문에
+		s1에서 showInfo를 호출를 하면 오류가 발생할 수 밖에 없다.
+		*/
+
+
+	</script>
+</body>
+
+</html>

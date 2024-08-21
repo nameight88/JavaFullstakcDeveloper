@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title> Javascript 객체지향 - 상속 </title>
+</head>
+
+<body>
+	<script>
+		/* 클래스 선언
+			function Animal() = {};
+		*/
+		// 부모클래스
+		var Animal = function () { };
+		Animal.prototype = {
+			sound: function () {
+				document.writeln('울부짖다 <br/>');
+			},
+			move: function () {
+				document.writeln('동물은 움직인다 <br/>');
+			}
+		};
+		//var Animal 변수를 생성을 해줬지만 클래스를 이용을 해주기 위해서
+		// 첫글자를 대문자로 생성
+
+		// 자식클래스
+		var Dog = function () { };
+		Dog.prototype = new Animal(); // Animal과 dog를 상속관계를 맺어주었다
+		//Aniaml 부모 dog 자식
+
+		/*
+		객체 변수명 :dog
+		클래스명 : Dog
+		*/
+		var dog = new Dog();
+		dog.move();
+
+		//(2)overrding : 부모의 함수를 재정의
+		Dog.prototype.sound = function () {
+			document.write("멍멍 짖음 <br/>");
+		}
+		dog.sound();
+
+		//(3) 부모클래스에 없는 경우 - 추가
+		
+		var Human = function(){};
+		//클래스로 이용을 할 변수 선언
+		Human.prototype = new Animal();
+		//클래스를 Animal를 부모로 상속받음
+		var human = new Human();
+		Human.prototype.walk = function(){
+			document.write("뚜벅뚜벅");
+		}
+		//human에 walk이라는 함수를 새로 추가
+		human.walk();
+		//human 에 있는 새로 생성이 된 walk이라는 함수를 호출
+		
+	</script>
+</body>
+
+</html>

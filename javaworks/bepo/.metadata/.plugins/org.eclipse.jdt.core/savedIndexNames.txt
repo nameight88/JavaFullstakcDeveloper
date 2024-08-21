@@ -1,0 +1,6 @@
+INDEX VERSION 1.134+D:\work\javaworks\bepo\.metadata\.plugins\org.eclipse.jdt.core
+1243057733.index
+1497482870.index
+4036943781.index
+1865797976.index
+3272348999.index

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        00_object.html
+    </title>
+    <script type="text/javascript">
+        /*
+        장점 : 별도의 클래스 구조가 없이 빠르게 작성하고 구성이 자유롭다.
+        단점 : 구조가 미리 정의가 없으니 구조 파악이 어렵다.
+                구조가 없으니 재사용이 불가능하다.
+        */
+        //[1]
+        var obj1 = {
+            name :'홍길순',
+            age : 33 ,
+            display : function(){
+                document.write(name+'님은 '+ this.age+"세 입니다. <br/>");
+            }
+        }; // 이런식으로하면 객체로 취급을 한다.
+        //맴버 변수 이므로 this로 age를 찾아줘야한다.
+
+        obj1.display();
+        obj1['display'](); //이방식으로 찾아주는것도 같은 방법이다.
+        
+        //[2]
+        var obj2 = {};
+        obj2.name = '홍길동';
+        obj2.age = 22;
+        obj2.dept = 'IT';
+        obj2.display = function(){
+            document.write(name+"님은"+this.age+"세 입니다 또 "+this.dept+"부서입니다 <br/>");
+        }
+        obj2.display();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

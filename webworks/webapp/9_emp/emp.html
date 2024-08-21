@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>emp</title>
+	<!-- 외부라이브러리 css 연결 -->
+	<link href="../3_bootstrap_class/css/nomalize.css" rel="stylesheet">
+    <link href="../3_bootstrap_class/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../3_bootstrap_class/css/style.css" rel="stylesheet">
+    <link href="../3_bootstrap_class/css/animate.css" rel="stylesheet">
+    <link href="../3_bootstrap_class/css/jquery.fancybox.css" rel="stylesheet">
+    
+    <!-- 우리꺼 연결 -->
+    <link href="./css/emp.css" rel="stylesheet">
+    
+</head>
+<body>
+	<header>
+		<h1 class="text-success"><img src='./images/1.png'/> 문찬휘(주)<img src='/WebUI/9_emp/images/1.png'/></h1>
+	</header>
+	<section>
+	<fieldset>
+	<legend></legend>
+	<form class='form' action='EmpInsert.jsp' method="get">
+	<label for='empno' class='alert alert-success'><pre>사   번</pre></label><input type="text" name='empno'><br/>
+	<label for='ename' class='alert alert-success'><pre>사 원 명</pre></label><input type='text' name='ename'><br/>
+	<label for='sal' class='alert alert-success'><pre>월   급</pre></label><input type='text' name='sal'><br/>
+	<label for='dept' class='alert alert-success'><pre>부   서</pre></pre></label><input type='text' name='dept'><br/>
+	<label for='job' class='alert alert-success'><pre>업   무</pre></label><input type='text' name='job'><br/>
+	<input type='submit' value='사원등록'>
+	</form>
+	</fieldset>
+	</section>
+	
+</body>
+</html>

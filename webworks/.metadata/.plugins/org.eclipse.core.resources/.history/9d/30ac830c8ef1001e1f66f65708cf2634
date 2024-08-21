@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>06_sampleForm.html</title>
+</head>
+<body>
+
+<form>
+<!-- 
+	<input type='text' name='name'>
+	<input type='submit' value='전송'>
+ -->
+ 
+ 	 <fieldset>
+ 		<legend>회원가입</legend>
+ 			<ol>
+ 				<li>
+ 					<label for='name'>이름</label>
+ 					<input id='name' type='text' name='name'>
+ 				</li>
+ 				<li>
+ 					<label for='gender'>성별</label>
+ 					<input type='radio' name='gender' id='gender' value='남자' checked='checked'>남자
+ 					<input type='radio' name='gender' id='gender' value='여자' >여자
+ 				</li>
+ 				<li>
+ 					<label for='job'>직업</label>
+ 					<select id='job' name='job'>
+ 						<option value='개발자'>개발자</option>
+ 						<option value='코더'>코더</option>
+ 						<option value='프로그래머' selected>프로그래머</option>
+ 					</select>
+ 				</li>
+ 				<li>
+ 					<input type='submit' value='회원가입'>
+ 					<input type='reset' value='취소'>
+ 					
+ 				</li>
+ 			</ol>
+	 </fieldset>
+</form>
+
+</body>
+</html>

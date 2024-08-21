@@ -1,0 +1,107 @@
+
+1. 라이브러리 추가 : pom.xml
+
+      	<!-- 트랜잭션 필요 -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-tx</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+
+
+2. 설정( root-context.xml )
+	
+ 	<!-- ###### Transaction ###### -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<!-- transaction annoation 방식 설정 -->
+	<!-- 왼쪽에 AOP 화살표 처리가 나와야 한다 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+
+	(*) 트랙잰션 처리 후 aop 마트 생기는지 확인
+
+
+3. @Transactional 지정 ( ServiceTxImpl.java )
+
+	//#########
+	@Transactional
+	@Override
+	public void addAll(CustomerVO cvo, MemberVO mvo)
+	{
+	
+	}
+
+*********************************************************
+위에 단계가 기본적인 단계인데 안되는 경우가 발생한다
+자세히 보면 AOP 마크가 클래스와 root-context.xml에 잡히긴 하는데
+servlet-context.xml에 보면 xmlns에 잡히는 것을 볼 수 있다
+
+이럴 경우에는 servlet-context.xml와 root-context.xml 경우로 나눠진 상태에서
+root-context가 먼저 실행해서 문제를 야기하는 것 같으니
+
+***** 그렇지만 <mybatis-spring:scan>는 아래처럼 변경하면 안된다.
+       트랜잭션을 위해서는 아래처럼 변경 필요
+*****
+   
+
+(1) root-context의 내용을 servlet-context.xml로 이동하여 실행하거나
+
+(2) web.xml에서 수정
+
+	` 리스너 부분을 주석처리하고
+	` 서블릿 설정에서 root-context.xml 을 같이 지정
+
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
+	<!-- 	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+	</context-param> -->
+	
+	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	<!-- 	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener> -->
+
+	<!-- Processes application requests -->
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>
+			/WEB-INF/spring/appServlet/servlet-context.xml
+			/WEB-INF/spring/root-context.xml
+			</param-value>
+			
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+		
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<!-- 한글인코딩  -->
+	  <filter>
+	  	<filter-name>charEncoding</filter-name>
+	  	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+	  	<init-param>
+	  		<param-name>encoding</param-name>
+	  		<param-value>UTF-8</param-value>
+	  	</init-param>
+	  </filter>
+	  <filter-mapping>
+	  	<filter-name>charEncoding</filter-name>
+	  	<url-pattern>/*</url-pattern>
+	  </filter-mapping>
+	  
+
+</web-app>

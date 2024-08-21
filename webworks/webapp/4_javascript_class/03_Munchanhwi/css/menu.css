@@ -1,0 +1,17 @@
+@charset "UTF-8";
+td img {
+	width : 200px;
+	height : 200px;
+}
+.menutb{
+	float : left;
+}
+.jumuntb{
+	float : right;
+	border : 2px solid gray;
+}
+.jumuntb td{
+	text-align : center;
+	border : 2px solid gray;
+	width : 200px;
+}

@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.core.classpathVariable.ASPECTJRT_LIB=D\:/sts-bundle/sts-3.9.14.RELEASE/plugins/org.aspectj.runtime_1.9.6.202007241909.jar
+org.eclipse.jdt.core.classpathVariable.ECLIPSE_HOME=D\:/sts-bundle/sts-3.9.14.RELEASE/
+org.eclipse.jdt.core.classpathVariable.JRE_LIB=D\:/download/jdk-11.0.22_windows-x64_bin/jdk-11.0.22/lib/jrt-fs.jar
+org.eclipse.jdt.core.classpathVariable.JRE_SRC=D\:/download/jdk-11.0.22_windows-x64_bin/jdk-11.0.22/lib/src.zip
+org.eclipse.jdt.core.classpathVariable.JRE_SRCROOT=
+org.eclipse.jdt.core.classpathVariable.JUNIT_HOME=D\:/sts-bundle/sts-3.9.14.RELEASE/plugins/org.junit_4.13.0.v20200204-1500.jar
+org.eclipse.jdt.core.classpathVariable.M2_REPO=C\:/Users/ict03_013/.m2/repository
+org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled

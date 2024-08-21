@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- 1.기본형 맴버 값 지정 
+		(1) setter 이용
+-->
+<bean id="member" class="ex2_xml_ref.MemberBean">
+	<property name="name" value="홍길동"></property>
+	<property name="age" value="33"/>
+	<property name="message">
+		<value>오늘도 행복합시다.</value>
+	</property>
+</bean>
+
+<!-- 1.기본형 맴버 값 지정 
+		(2) constructor 이용
+-->
+<bean id="member2" class="ex2_xml_ref.MemberBean">
+	<constructor-arg value="홍길국"></constructor-arg>
+	<constructor-arg value="22"/>
+	<constructor-arg >
+		<value>짝꿍 프로젝트 화이팅!</value>
+	</constructor-arg>
+</bean>
+
+
+<!-- 2.참조형 맴버 값 지정
+	(1)setter 이용 
+	ref 속성을 사용한다.
+	위에 있는 member bean 에 있는 id와 맞추어야한다.
+ -->
+<bean id="dao1" class="ex2_xml_ref.MemberDAO">
+	<property name="member" ref='member'></property>
+</bean>
+
+<!-- 2.참조형 맴버 값 지정
+	(2)constructor 이용
+ -->
+ 
+<bean id="dao2" class="ex2_xml_ref.MemberDAO">
+	<constructor-arg ref="member2"/>
+</bean>
+
+</beans>

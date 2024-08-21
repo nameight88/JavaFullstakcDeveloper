@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>User list</title>
+	<style type="text/css">
+
+		div {        
+	        margin: 0 auto;         
+	        border:1px solid #6d82f3;
+	        display:table;
+	    }   
+	
+		table{
+			width: 600px auto;
+			border: 1px solid  #6d82f3;					
+		}
+		
+		h3 {
+	        text-align: center;
+	    }   
+
+		th, td{
+			border: 1px solid #6d82f3;	
+			text-align: center;
+		}
+
+		.aa{
+			text-align: left;
+		}
+		
+</style>
+</head>
+<body>
+	<h3>전체조회</h3>
+	<hr>
+	<div class="div1">
+		<table>
+			<tr>
+				<td class="aa" colspan="10">
+					<a href="/create">글쓰기</a>	
+				</td>
+			</tr>
+			<tr>
+				<th>글번호</th>
+				<th>제목</th>
+				<th>이름</th>
+				<th>내용</th>
+				<th>아이디</th>
+				<th>패스워드</th>
+				<th>작성일</th>
+				<th>수정일</th>
+				<th>수정</th>
+				<th>삭제</th>
+			</tr>
+			<!-- ##################### -->
+			<!-- 넘겨받은 데이타를 출력 -->
+			 <!-- html에서 필요한부분에서 js문법을 사용하기 위해서 ejs 라이브러리 사용-->
+			<% users.forEach( function(user){%>
+				<tr>
+					<td><%= user.BNUM %></td>
+					<td><%= user.BTITLE%></td>
+					<td><%= user.BNAME %></td>
+					<td><%= user.BCONTENT %></td>
+					<td><%= user.MID %></td>
+					<td><%= user.BPW %></td>
+					<td><%= user.INSERTDATE %></td>
+					<td><%= user.UPDATEDATE %></td>
+					<td><a href="/edit/<%= user.BNUM %>"><%= user.BNUM %>번 수정</a></td>
+					<td><a href="/delete/<%= user.BNUM %>"><%= user.BNUM %>번 삭제</a></td>
+				</tr>
+			<% })%>
+		</table>		
+	</div>	
+</body>
+</html>

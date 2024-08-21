@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	document.write('<table border="2">'); //값을 넣어줄 초기 테이블을 생성
+	var x = 1; // 증가할 값을 받을 변수(레터널) 설정
+	for (var i = 0; i < 5; i += 1) {
+		document.write('<tr>')
+		for (var j = 0; j < 5; j += 1) {
+			document.write("<td>" + (x++) + "</td>")
+		}
+		document.write("</tr>");
+	}
+	document.write("</table>");
+	//var i가 1씩 증가할때 var j는 5번을 반복을 한다.
+	//그때마다 var x는 하나씩 계속 증가
+	//오타 조심 초기값 0이 아닌 1로 설정 td를 따로 묶어주자
+</script>
+</head>
+<body>
+
+</body>
+</html>

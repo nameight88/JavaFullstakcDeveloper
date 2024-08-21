@@ -1,0 +1,58 @@
+
+
+##  Controller 클래스 테스트
+
+	- 구현한 컨트롤러가 지정한 요청을 제대로 처리하는지 확인
+		( 예. 제대로 리다이렉트하는지, json 처리는 하는지 )
+
+	- 컨트롤러의 실행결과를 확인하기 위해서는 톰캣을 실행하고 웹 브라우저를 이용해서 응답 내용을 확인해야 한다.
+	  즉, 컨트롤서 클래스는 WAS(Web Application Server)상에서 작동하는데,
+	  이를 별도의 서버 동작 없이 모조품(Mock)으로 테스트 한다
+	
+	-JUnit은 MockMvc를 이용
+	
+	
+		※ 테스트는 어떠한 경우에서라도 서로 의존해서는 안되고, 서로 절대 영향을 줘서도 안됩니다.
+
+		JUnit : 이미 자바에서는 테스팅을 하기 위해 기존 코드와 유사한 코드를 만드는 불편함을 없애기 위한 여러 테스팅 도구들이 존재하고,
+				그 중 JUnit은 표준이라 할 정도로 폭넓게 사용되는 자바 테스팅 프레임워크입니다.
+			
+			- 단위테스트 : 일반적으로 구축전이나 도중에 구체적인 부분만 확인하기 위해
+			- 통합테스트 : 전반적인 부분을 확인하기 위해
+
+		* JUnit 테스트 메서드 규칙(@Test)
+		1. 테스트 대상 메서드가 public 으로 선언되어야 합니다.
+		2. 메서드에 @Test 라는 어노테이션이 필요합니다.
+		3. 반환형은 없고, 매개변수도 없어야 합니다.
+
+0. pom.xml
+
+	적어도 서블릿 버전을 3.1.0 이상으로 해줘야 에러가 발생하지 않느다
+	
+		<!-- Servlet -->
+<!-- 		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency> -->
+		
+		<dependency>	<!-- WebAppConfiguration을 사용하기 위함 -->
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+        </dependency>
+
+  
+1. BoardControll.java 에 추가
+        
+        @RequestMapping("/test.do")
+		public void test(String name){
+			System.out.println("/test 요청");
+		}
+		
+2. ControllerTest.java 에서 > 오른 마우스 > Run As > JUnit Test
+
+		
+        
+        

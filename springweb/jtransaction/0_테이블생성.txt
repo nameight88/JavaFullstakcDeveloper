@@ -1,0 +1,42 @@
+-- 마리아디비
+
+create table tx_member(
+ num int primary key auto_increment,
+ id varchar(50) unique,
+ password varchar(50) not null,
+ name varchar(50) not null,
+ address varchar(50) not null
+);
+
+INSERT INTO tx_member(id, PASSWORD, NAME, address) VALUES('mtest','1234','홍길m', '서울');
+
+create table tx_customer(
+num int primary key auto_increment,
+ssn varchar(50) not null unique,
+name varchar(50) not null,
+address varchar(50) not null
+);
+
+INSERT INTO tx_customer(ssn, NAME, address) VALUES('ctest','김길동c', '부산');
+
+COMMIT;
+
+
+-- 오라클
+create table tx_member(
+ num number primary key,
+ id varchar2(50) unique,
+ password varchar2(50) not null,
+ name varchar2(50) not null,
+ address varchar2(50) not null
+);
+create sequence member_tx_seq increment by 1 start with 1;
+
+create table tx_customer(
+num number primary key,
+ssn varchar2(50) constraint customer_ssn_nn not null,
+name varchar2(50) not null,
+address varchar2(50) not null,
+constraint customer_ssn_uq unique(ssn)
+);
+create sequence customer_tx_seq increment by 1 start with 1;

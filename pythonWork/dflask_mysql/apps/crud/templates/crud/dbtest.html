@@ -1,0 +1,20 @@
+{% extends 'crud/base.html'%}
+
+{% block title %}우리의 앱{% endblock %}
+
+{% block content %}
+{#
+    <div class="jumbo">
+        <h2>Flask+Mysql</h2>
+        </hr>
+        <h5>아이디 : {{resultData.empno}}</h5>
+        <h5>사원명 : {{resultData.ename}}</h5>
+    </div>
+ #}
+    <div>
+        {% for i in resultData %}
+        <h5>아이디 : {{i.empno}}</h5>
+        <h5>아이디 : {{i.ename}}</h5>
+        {% endfor%}
+    </div>
+{% endblock %}

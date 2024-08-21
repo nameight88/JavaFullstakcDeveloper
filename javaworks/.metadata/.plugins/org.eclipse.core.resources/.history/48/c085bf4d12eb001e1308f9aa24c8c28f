@@ -1,0 +1,8 @@
+package e_info;
+
+
+// VO ( Value object)
+// DTO( Data Transfer Object)
+public class infoVo {
+
+}

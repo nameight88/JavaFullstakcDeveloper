@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;thread.basic.Ex07_SychTest&apos; to &apos;Ex7_SychTest&apos;&#x0D;&#x0A;- Original project: &apos;eIO&apos;&#x0D;&#x0A;- Original element: &apos;thread.basic.Ex07_SychTest&apos;&#x0D;&#x0A;- Renamed element: &apos;thread.basic.Ex7_SychTest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Ex07_SychTest&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/&lt;thread.basic{Ex07_SychTest.java[Ex07_SychTest" matchStrategy="1" name="Ex7_SychTest" qualified="false" references="true" similarDeclarations="false" stamp="1716424730131" textual="false" version="1.0"/>
+</session>
